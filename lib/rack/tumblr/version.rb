@@ -1,7 +1,5 @@
-require 'rack/reverse_proxy'
-
 module Rack
-  class Tumblr < Rack::ReverseProxy
+  module Tumblr
     VERSION = "0.0.1"
   end
 end

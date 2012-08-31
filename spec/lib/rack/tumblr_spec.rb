@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Rack::Tumblr do
+describe Rack::Tumblr::ReverseProxy do
   let(:app){ lambda{ [404, {}, "404 Not Found"]} }
   let(:options){ {name: 'example'}.merge(@options || {}) }
-  subject{ Rack::Tumblr.new(app, options) }
+  subject{ Rack::Tumblr::ReverseProxy.new(app, options) }
 
   describe '#replace_links' do
     let(:request){ mock(host_with_port: 'awesome.com', scheme: 'http') }
